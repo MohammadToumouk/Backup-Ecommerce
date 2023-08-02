@@ -1,0 +1,114 @@
+.card {
+    position: relative;
+    width: 400px;
+    height: 600px;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f6f6f6;
+    margin: 5px;
+}
+
+.badge {
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #4caf50;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+}
+
+.image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    flex: 1;
+    height: 100%
+}
+
+.product-image {
+    width: 250px;
+    height: 400px;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.color-text {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.details {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.product-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    margin-left: 12px;
+}
+
+.product-price {
+    font-size: 26px;
+    color: #333;
+    margin-bottom: 8px;
+    margin-left: 12px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 12px;
+    width: 100%;
+
+}
+
+.buy-now-button {
+    padding: 8px 16px !important;
+    border: none !important;
+    border-radius: 20px !important;
+    cursor: pointer !important;
+    background-color: transparent !important;
+    color: black !important;
+    text-decoration: none !important;
+    transition: background-color 0.3s !important;
+}
+
+.buy-now-button:hover {
+    background-color: red !important;
+    color: #fff !important;
+    text-decoration: none !important;
+}
+
+.details-button {
+    padding: 8px 2px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: transparent;
+    color: black;
+    text-decoration: underline;
+}
+
+
+.badge.sold-out {
+    background-color: #f00;
+    color: #fff;
+}

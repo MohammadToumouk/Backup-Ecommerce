@@ -1,0 +1,160 @@
+/* Sidebar.css */
+
+.sidebar {
+    margin-top: 50px;
+    width: 250px;
+    padding: 20px;
+    background-color: white;
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 600px;
+    overflow-y: auto;
+    border-radius: 20px;
+}
+
+.sidebar h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.sidebar label {
+    display: block;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.sidebar input[type="checkbox"] {
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+.sidebar input[type="range"] {
+    width: 100%;
+    cursor: pointer;
+}
+
+.sidebar .filter-section {
+    margin-bottom: 20px;
+}
+
+.sidebar .filter-section:last-child {
+    margin-bottom: 0;
+}
+
+
+
+.sidebar input[type="checkbox"]:checked+span {
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* .custom-slider {
+    margin-top: 8px;
+    width: 200px;
+} */
+
+.slider-bar {
+    height: 6px;
+    border-radius: 3px;
+    width: 200px;
+
+}
+
+.slider-handles {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -5px;
+    margin-right: 12px;
+}
+
+.slider-handles span {
+    font-size: 14px;
+    color: #333;
+}
+
+
+.MuiSlider-rail {
+    background-color: #ccc;
+    height: 6px;
+    border-radius: 3px;
+    width: 200px;
+}
+
+
+
+.sidebar input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    box-shadow: none;
+    transition: border-color 0.3s;
+}
+
+.sidebar input[type="text"]:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+
+.sidebar select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23666" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    transition: border-color 0.3s;
+}
+
+.sidebar select:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+
+.sidebar select option {
+    background-color: #fff;
+    color: #333;
+}
+
+
+.sidebar select option:checked {
+    font-weight: bold;
+}
+
+
+.sidebar select:hover {
+    border-color: #007bff;
+}
+
+.color-picker {
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 130px;
+    overflow-y: auto;
+    padding-top: 5px;
+
+}
+
+.color-option {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    border-radius: 50%;
+    margin-right: 8px;
+    margin-bottom: 8px;
+}

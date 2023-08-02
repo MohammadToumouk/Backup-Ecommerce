@@ -1,0 +1,54 @@
+.profile-container {
+    margin: 30px 300px;
+    height: 55vh;
+
+}
+
+.profile-container h1 {
+    font-size: 40px;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.profile-input {
+    padding: 8px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    width: 540px;
+}
+
+.address-sub-input {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.profile-item {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+}
+
+.profile-item label {
+    font-weight: bold;
+    min-width: 120px;
+}
+
+.profile-item span {
+    flex: 1;
+    padding: 8px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+}
+
+.profile-item:not(:last-child) {
+    margin-bottom: 20px;
+}
