@@ -17,6 +17,8 @@ import {
 } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 
+const baseUrl = import.meta.env.VITE_BACKEND_URL;
+
 const UsersTable = () => {
   const [users, setUsers] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -31,8 +33,8 @@ const UsersTable = () => {
   // Fetch users from the backend API
   const fetchUsers = async () => {
     try {
-      const response = await axios.get(
-        `http://localhost:3069/user?page=${currentPage}&perPage=${usersPerPage}`,
+      const response = await axios.get((baseUrl || "") + 
+        `/api/user?page=${currentPage}&perPage=${usersPerPage}`,
         {
           withCredentials: true,
         }
@@ -80,8 +82,8 @@ const UsersTable = () => {
 
     // Send the role update request to the server
     axios
-      .put(
-        `http://localhost:3069/user/${userId}`,
+      .put((baseUrl || "") + 
+        `/api/user/${userId}`,
         { role: newRole },
         { withCredentials: true }
       )

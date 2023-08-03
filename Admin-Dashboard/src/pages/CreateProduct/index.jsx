@@ -34,6 +34,7 @@ const formSchema = z.object({
   description: z.string().min(0).max(255),
 });
 
+const baseUrl = import.meta.env.VITE_BACKEND_URL
  
 const CreateProduct = () => {
   const { toast } = useToast()
@@ -59,7 +60,7 @@ const CreateProduct = () => {
 
   const onSubmit = async (values) => {
     try {
-      const response = await axios.post('http://localhost:3069/product/', {
+      const response = await axios.post((baseUrl || "") + '/api/product/', {
         name: values.name,
         brand: values.brand,
         images: values.images[0]["url"],
