@@ -16,13 +16,14 @@ import EditProduct from './pages/EditProduct'
 import { Toaster } from './components/ui/toaster'
 import EditOrder from './pages/EditProduct copy'
 
+const baseUrl = import.meta.env.VITE_BACKEND_URL
 
 function App() {
   const [user, setUser] = useState()
 
   useEffect(() => {
     const fetchUser = async () => {
-      await axios.get('http://localhost:3069/user/profile', { withCredentials: true })
+      await axios.get((baseUrl || "") + '/api/user/profile', { withCredentials: true })
         .then((response) => {
           setUser(response.data)
         })

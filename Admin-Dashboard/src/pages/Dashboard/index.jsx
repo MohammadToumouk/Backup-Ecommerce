@@ -11,6 +11,8 @@ import Sidebar from "@/components/Sidebar";
 //const stripePromise = loadStripe('pk_test_51N2Y22KydIDbyPlEkUYJimKUkEtYf7AJD0ef5XZ5JPRbdJjsrFnKTcgDK0rw3yIT2LJK4LnLzhNXz6NF9VNwGyTn00GEMHCqtJ');
 //const secretkey = "sk_test_51N2Y22KydIDbyPlEtk5uN1TDRkv0gMH3o7RiafTXgF2YoUWZUzkp01HhHb6SjTb4qWa77iukwfyMKleYcdDV84xw00TBDzokiB";
 
+const baseUrl = import.meta.env.VITE_BACKEND_URL;
+
 const Dashboard = ({ user }) => {
   const [paymentIntents, setPaymentIntents] = useState([]);
   const [customers, setCustomers] = useState([]);
@@ -42,7 +44,7 @@ const Dashboard = ({ user }) => {
 
   const fetchCustomers = async () => {
     try {
-      const response = await axios.get("http://localhost:3069/customer", {
+      const response = await axios.get((baseUrl || "") + "/api/customer", {
         withCredentials: true,
       });
       setCustomers(response.data);
@@ -54,7 +56,7 @@ const Dashboard = ({ user }) => {
 
   const fetchSales = async () => {
     try {
-      const response = await axios.get("http://localhost:3069/order", {
+      const response = await axios.get((baseUrl || "") + "/api/order", {
         withCredentials: true,
       });
       setSales(response.data.orders);

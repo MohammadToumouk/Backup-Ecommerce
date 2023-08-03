@@ -26,6 +26,8 @@ const formSchema = z.object({
   role: z.string().min(2).max(10),
 });
 
+const baseUrl = import.meta.env.VITE_BACKEND_URL;
+
 export const ProfilePageForm = () => {
   const [profileImageUrl, setProfileImageUrl] = useState();
   const [isHovered, setIsHovered] = useState(false);
@@ -43,8 +45,8 @@ export const ProfilePageForm = () => {
 
   const onSubmit = async (values) => {
     try {
-      const response = await axios.put(
-        `http://localhost:3069/user/${userId}`,
+      const response = await axios.put((baseUrl || "") + 
+        `/api/user/${userId}`,
         {
           name: values.name,
           email: values.email,
