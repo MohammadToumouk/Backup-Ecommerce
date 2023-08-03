@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Dashboard.css";
 import TitleHeadings from "@/components/TitleHeading";
-import { Overview } from "@/components/Overview/Overview";
+import { Overview } from "@/components/Overview/overview";
 import { Recentorders } from "@/components/RecentOrders/Recentorders";
 import { CardDashboard } from "@/components/Card/Card";
 import { SearchBar } from "@/components/Searchbar/SearchBar";
@@ -69,7 +69,7 @@ const Dashboard = ({ user }) => {
   const fetchPaymentIntentsFromServer = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:3069/stripe/checkout/create-checkout-session"
+        "https://admin-dashboard-ggrc.onrender.com/stripe/checkout/create-checkout-session"
       );
       setPaymentIntents(response.data.paymentIntents.data);
       /* console.log(response.data); */

@@ -19,7 +19,7 @@ const Orders = ({user}) => {
   const [paymentIntents, setPaymentIntents] = useState([]);
   useEffect(() => {
     const fetchOrders = async () => {
-        await axios.get('http://localhost:3069/stripe/checkout/create-checkout-session', { withCredentials: true })
+        await axios.get(' https://admin-dashboard-ggrc.onrender.com/stripe/checkout/create-checkout-session', { withCredentials: true })
           .then((response) => {
             setPaymentIntents(response.data.paymentIntents.data)
           })
