@@ -13,13 +13,15 @@ import { DataTable } from '@/components/ui/data-table'
 import { OrderColumns } from "../../components/Tables/columns"
 import { formatter } from '@/lib/utils'
 import Sidebar from '@/components/Sidebar'
+
+const baseUrl = import.meta.env.VITE_BACKEND_URL;
  
 const Orders = ({user}) => {
   const [orders, setOrders] = useState()
   const [paymentIntents, setPaymentIntents] = useState([]);
   useEffect(() => {
     const fetchOrders = async () => {
-        await axios.get(' https://admin-dashboard-ggrc.onrender.com/stripe/checkout/create-checkout-session', { withCredentials: true })
+        await axios.get((baseUrl || "") + '/api/stripe/checkout/create-checkout-session', { withCredentials: true })
           .then((response) => {
             setPaymentIntents(response.data.paymentIntents.data)
           })

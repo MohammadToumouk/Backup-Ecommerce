@@ -68,9 +68,7 @@ const Dashboard = ({ user }) => {
 
   const fetchPaymentIntentsFromServer = async () => {
     try {
-      const response = await axios.get(
-        "https://admin-dashboard-ggrc.onrender.com/stripe/checkout/create-checkout-session"
-      );
+      const response = await axios.get((baseUrl || "") + "/api/stripe/checkout/create-checkout-session");
       setPaymentIntents(response.data.paymentIntents.data);
       /* console.log(response.data); */
   
